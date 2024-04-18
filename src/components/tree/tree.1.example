@@ -35,7 +35,7 @@
 
             match context.column {
                 Columns::First => Some(name.join(" / ")),
-                Columns::Second => name.get(0).cloned(),
+                Columns::Second => name.first().cloned(),
                 Columns::Third => name.get(1).cloned(),
                 Columns::Fourth => name.get(2).cloned(),
             }
