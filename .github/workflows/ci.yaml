@@ -6,6 +6,11 @@ on:
   pull_request:
     branches: [ main ]
 
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
 jobs:
   build:
 
@@ -30,3 +35,4 @@ jobs:
   publish:
     if: github.ref == 'refs/heads/main'
     uses: ./.github/workflows/publish.yaml
+    secrets: inherit
