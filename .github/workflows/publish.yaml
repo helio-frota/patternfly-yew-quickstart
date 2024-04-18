@@ -8,6 +8,8 @@ permissions:
   pages: write
   id-token: write
 
+concurrency: publish
+
 jobs:
 
   build:
