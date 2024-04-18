@@ -1,9 +1,7 @@
 name: Publish
 
 on:
-  push:
-    branches:
-      - main
+  workflow_call: { }
 
 permissions:
   contents: read
@@ -62,10 +60,10 @@ jobs:
           cp index.html 404.html
 
       - name: Setup Pages
-        uses: actions/configure-pages@v3
+        uses: actions/configure-pages@v5
 
       - name: Upload artifact
-        uses: actions/upload-pages-artifact@v1
+        uses: actions/upload-pages-artifact@v3
         with:
           path: 'dist'
 
