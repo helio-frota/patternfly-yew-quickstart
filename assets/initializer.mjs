@@ -40,6 +40,8 @@ export default function initializer() {
 
     },
     onProgress: ({current, total}) => {
+      console.debug("current:", current, "total:", total);
+
       if (!total) {
         console.log("Loading...", current, "bytes");
       } else {
@@ -52,7 +54,7 @@ export default function initializer() {
       console.log("Loading... done!");
       console.timeEnd("trunk-initializer");
     },
-    onSuccess: (wasm) => {
+    onSuccess: (_wasm) => {
       console.log("Loading... successful!");
       setProgress(100);
       setState("Complete");
