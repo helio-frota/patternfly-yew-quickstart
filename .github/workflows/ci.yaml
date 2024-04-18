@@ -33,6 +33,9 @@ jobs:
         run: cargo build --release
 
   publish:
+    needs:
+      - build
+
     if: github.ref == 'refs/heads/main'
     uses: ./.github/workflows/publish.yaml
     secrets: inherit
